@@ -1,0 +1,10 @@
+Pages = 10;
+Temas = { International, National, Local News, Sports, Culture };
+potencial = [1500, 2000, 1000, 1500, 750];
+
+Caracteristicas = { Min, Max}
+consumption = [| 5, 9 |
+		4, 7 |
+		2, 5 |
+		2, 4 |
+		1, 3 |];

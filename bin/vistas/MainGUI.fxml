@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControlMainGUI">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="25.0">
+         <children>
+            <Label text="No. Paginas periodico:" />
+            <TextField fx:id="txt_paginasp" onAction="#changePages" prefHeight="25.0" prefWidth="50.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane prefHeight="400.0" prefWidth="1000.0">
+        <content>
+          <AnchorPane>
+               <children>
+                  <TableView fx:id="tbl" editable="true" prefHeight="400.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="topic" onEditCommit="#changeTopic" prefWidth="250.0" resizable="false" text="Topic" />
+                        <TableColumn fx:id="min" onEditCommit="#changeMin" prefWidth="250.0" text="Min nb of pages" />
+                        <TableColumn fx:id="max" onEditCommit="#changeMax" prefWidth="250.0" text="Max nb of pages" />
+                        <TableColumn fx:id="pot" onEditCommit="#changePot" prefWidth="250.0" text="Potential readers(per page)" />
+                     </columns></TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <HBox>
+         <children>
+            <TextField fx:id="txt_tema" promptText="Tema" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txt_min" promptText="Min. Pag." />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txt_max" promptText="Max. Pag." />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txt_lect" promptText="Pot. Lectores" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btn_add" mnemonicParsing="false" onAction="#addTopic" text="Añadir Tema" />
+            <Button fx:id="btn_del" mnemonicParsing="false" onAction="#delete" text="Eliminar Tema" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="50.0" prefWidth="1000.0">
+         <children>
+            <Button fx:id="btn_calc" mnemonicParsing="false" onMouseClicked="#ejecutar" text="Calcular Periodico" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
